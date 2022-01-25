@@ -28,9 +28,9 @@ final class CreateAlert extends BasePostCommand implements OpsGenieCommand
         $this->alert = $alert;
     }
 
-    public static function withMessage(string $message)
+    public static function withMessage(string $message, array $args)
     {
-        return new self(new Alert($message));
+        return new self(new Alert($message, $args));
     }
 
     public function payload(): array
